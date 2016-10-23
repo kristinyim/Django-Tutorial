@@ -8,3 +8,10 @@ from django.views.generic import TemplateView
 def index(request):
 	context = {'jason_is_dumb': True}
 	return render(request, 'fundth/index.html', context)
+
+def organizationLogin(request):
+	return render(request, 'fundth/organizationLogin.html')
+
+def businessLogin(request):
+	return render(request, 'fundth/businessLogin.html')
+
