@@ -178,6 +178,8 @@ enter a username/email and password.
 
 Now, when you run your server and head to [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) you should see a nice admin page! ![admin](https://docs.djangoproject.com/en/1.10/_images/admin01.png)
 
+You now just need to register your models with the admin: head to polls/admin.py and uncomment out the lines we have commented.
+
 After logging in you should be able to click the Polls app and play around with creating, editting, and deleting models!
 
 
@@ -188,6 +190,7 @@ Lets bring data from our models into the views and throw it into a template!  Be
 Edit your index function in views.py to the following *polls/views.py*
 ```python
 from django.shortcuts import render
+from django.template import loader
 from .models import Question
 
 def index(request):
