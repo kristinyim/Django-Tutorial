@@ -15,3 +15,10 @@ def organizationLogin(request):
 def businessLogin(request):
 	return render(request, 'fundth/businessLogin.html')
 
+def businessNewAccount(request):
+	return render(request, 'fundth/businessNewAccount.html')
+
+def organizationNewAccount(request):
+	return render(request, 'fundth/organizationNewAccount.html')
+
+
