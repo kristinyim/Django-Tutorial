@@ -12,16 +12,25 @@
 
 		
 		<link rel="stylesheet" href="{% static 'css/style.css'%}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
 
 	</head>
 	<body>
 		
 		<!--Insert Code Here-->
-		<h1>Hey</h1>
+		<h1>Friendship Test</h1>
 		{% if latest_question_list %}
-		    <ul>
+		    <ul class="list-group">
 		    {% for question in latest_question_list %}
-		        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+		        <!-- <li class="list-group-item"><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li> -->
+
+		        <!-- This one uses the name attribute and question_id part to match urls. Now just change urls instead of template if want to change the url -->		
+
+		        <!-- Use namespaces to differentiates between different apps by adding polls: in the front -->
+		        <li class="list-group-item"><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+
 		    {% endfor %}
 		    </ul>
 		{% else %}
@@ -29,5 +38,6 @@
 		{% endif %}
 
       	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>
 </html>
